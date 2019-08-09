@@ -2,13 +2,13 @@ const path = require('path');
 module.exports = {
     entry: {
         general: './src/general.js',
-        main: './src/main.js',
+        main: './src/index.js',
         schelkovo: './src/schelkovo.js',
         mozaika: './src/mozaika.js',
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: [name].js,
+        filename: '[name].js',
         publicPath: '/dist'
     },
     devServer: {
@@ -23,4 +23,4 @@ module.exports = {
             }
         ],
     }
-}
+};
