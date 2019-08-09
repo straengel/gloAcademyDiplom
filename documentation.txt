@@ -1,0 +1,88 @@
+install
+    npm init -y
+    //установка webpack
+    npm i webpack webpack-cli -D
+    npm install --save-dev webpack-dev-server
+    npm i path -D
+    //установка babel
+    // babel нужен для webpack, а preset для старого кода
+    npm install -D babel-loader @babel/core @babel/preset-env
+    //чтобы работало и в ИЕ необходимо поставить полифилы по мере необходимости
+    //смотреть полифилы нужно на npmjs.com
+    //а так большинство вопросов решается этими настройками
+    npm install @babel/polyfill element-closest es6-promise fetch-polyfill formdata-polyfill nodelist-foreach-polyfill whatwg-fetch
+
+Подключение полифилов
+// ./src/index.js там подключать полифилы
+    import 'nodelist-foreach-polyfill';
+    import '@babel/polyfill';
+    import 'nodelist-foreach-polyfill';
+    import 'es6-promise';
+    import 'whatwg-fetch';
+    //import 'fetch-polyfill';
+    import 'formdata-polyfill';
+    import elemntClosest from 'element-closest';
+    elemntClosest(window);
+
+in .gitignore
+    /node_modules/
+start webpack
+    //запустить webpack
+    npx webpack
+    //запустить проект в режиме разработки
+    npm run dev
+    //запустить сборку проекта
+    npm run build
+settings
+    package.json
+        // " - в package.json нужно использовать двойные ковычки
+        "scripts": {
+            //использовать для разработки
+            //
+            "dev": "webpack-dev-server --open --mode=development",
+            //использовать для релиза и продакшен
+            "build": "webpack --mode=production"
+        },
+    //создать webpack.config.js
+    webpack.config.js
+        //подключение path пакета
+        const path = require('path');
+        module.exports = {
+            entry: {
+                main: './src/index.js',
+            },
+            output: {
+                //для корректной рабооты path нужно установить
+                //npm i path -D
+                //__dirname - папка с нашим проектом
+                //Второй параметр -
+                path: path.resolve(__dirname, './dist'),
+                //имя файла, при такой конструкции указывается
+                //множественные точки доступа из entry
+                //в данном примере создаться main.js
+                filename: [name].js,
+                publicPath: '/dist'
+            },
+            //для обработки ошибки
+            devServer: {
+                overlay: true,
+            },
+            module: {
+                rules: [
+                    {
+                        test: /\.js$/,
+                        //для всех файлов js. но есть и для картинок и css и проч
+                        loader: 'babel-loader',
+                        //исключение папки /node_modules/
+                        //чтобы не мешалась
+                        exclude: '/node_modules/',
+                    }
+                ]
+            }
+        }
+    //создать .babelrc - настройки babel
+    .babelrc
+        {
+            //необходимо для совместимости с другими браузерами даже ИЕ
+            "presets": ["@babel/preset-env"]
+        }
