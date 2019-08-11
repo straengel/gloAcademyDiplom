@@ -16,5 +16,9 @@ import popUp from './modules/general/popUp';
 
 //менюшка
 clubSelect();
-//модульное окно подарок
+//модульное окно подарок открытие
 popUp(document.querySelector('.fixed-gift'), document.getElementById('gift'));
+//Страница модулей открытие
+popUp(document.querySelector('.open-popup'), document.getElementById('free_visit_form'));
+//Модальное окно #2 открытие
+popUp(document.querySelector('.call .callback-btn'), document.getElementById('callback_form'));
