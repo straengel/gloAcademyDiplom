@@ -8,6 +8,13 @@ import 'whatwg-fetch';
 import 'formdata-polyfill';
 import elemntClosest from 'element-closest';
 elemntClosest(window);
-
+import clubSelect from './modules/general/clubSelect';
+//Обработка всех popup, +первый элемент кнпока, второй сама форма
+import popUp from './modules/general/popUp';
 //пример подключение js файлов
 //import countTimer from "./modules/countTimer";
+
+//менюшка
+clubSelect();
+//модульное окно подарок
+popUp(document.querySelector('.fixed-gift'), document.getElementById('gift'));
