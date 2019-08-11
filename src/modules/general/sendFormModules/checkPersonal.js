@@ -1,4 +1,4 @@
-const checkBox = (phone) => {
+const checkPersonal = (phone) => {
 
 };
-export default checkBox;
+export default checkPersonal;

@@ -16,8 +16,10 @@
  * 3) После отправки данных вывести модальное окно c id="thanks"
  * в котором сообщение об успешной отправки или об ошибке если отправка не удалась
  * - Наверно надо добавить доп параметр, который будет выводить модальное окно и может вывести в отдельный модуль
+ *
+ *
  */
-const sendForm = (element) => {
+const sendFormModal = (element, isCheck) => {
     const   errorMessage = 'Ошибка!',
         loadMessage = 'Идет отправка!',
         successMessage = 'Отправлено!';
@@ -116,4 +118,4 @@ const sendForm = (element) => {
         });
     };
 };
-export default sendForm;
+export default sendFormModal;
