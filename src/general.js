@@ -15,6 +15,7 @@ import popUp from './modules/general/popUp';
 import mainSlider from './modules/general/mainSlider';
 //Галлерея "Услуги наших клубов"
 import servicesSlider from './modules/general/servicesSlider';
+import gallerySlider from './modules/general/gallerySlider';
 //Обработка всех модальных форм, первый параметр - форма, второй - проверка чекбокса
 //import sendFormModal from './modules/general/sendFormModal';
 //Обработка всех страничных форм, первый параметр - форма, второй - проверка чекбокса
@@ -34,3 +35,5 @@ popUp(document.querySelector('.call .callback-btn'), document.getElementById('ca
 mainSlider();
 //УСЛУГИ НАШИХ КЛУБОВ #services
 servicesSlider();
+//ФОТОГАЛЕРЕЯ
+gallerySlider();

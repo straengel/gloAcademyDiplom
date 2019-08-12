@@ -29,7 +29,6 @@ const servicesSlider = () => {
             numFirstSlide--;
             animateCSS(slide[numFirstSlide], 'fadeInLeft', slide[numFirstSlide].style.display = 'block');
             slide[numLastSlide].style.display = 'none';
-            console.log(numFirstSlide, numLastSlide);
         }
     };
 
@@ -39,10 +38,7 @@ const servicesSlider = () => {
             slide[numFirstSlide].style.display = 'none';
             numLastSlide++;
             numFirstSlide++;
-            console.log(numFirstSlide, numLastSlide);
         }
-
-
     };
     slider.addEventListener('click', (event) => {
         let target = event.target;
