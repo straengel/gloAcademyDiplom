@@ -1,12 +1,11 @@
 const mainSlider = () => {
-    const   slide = document.querySelectorAll('.main-slider .slide'),
-            slider = document.querySelector('.main-slider');
+    const   slide = document.querySelectorAll('.main-slider .slide');
     let     interval,
             timeOutFirst,
             timeOutSecond,
             currentSlide = 0; //номер слайдра
     slide.forEach((el, index) => {
-        el.style.transition = `opacity .2s`;
+        el.style.transition = `opacity .3s`;
         if(index === 0)
             el.style.opacity = `1`;
         else
@@ -18,7 +17,7 @@ const mainSlider = () => {
         timeOutFirst = setTimeout(() => {
             clearTimeout(timeOutFirst);
             elem[index].style.display = `none`;
-        }, 200);
+        }, 300);
 
     };
 
@@ -27,7 +26,7 @@ const mainSlider = () => {
         timeOutSecond = setTimeout(() => {
             clearTimeout(timeOutSecond);
             elem[index].style.opacity = `1`;
-        }, 200);
+        }, 300);
     };
 
     const autoPlaySlide = () => {

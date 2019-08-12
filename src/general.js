@@ -13,6 +13,8 @@ import clubSelect from './modules/general/clubSelect';
 import popUp from './modules/general/popUp';
 //Слайдер в шапке
 import mainSlider from './modules/general/mainSlider';
+//Галлерея "Услуги наших клубов"
+import servicesSlider from './modules/general/servicesSlider';
 //Обработка всех модальных форм, первый параметр - форма, второй - проверка чекбокса
 //import sendFormModal from './modules/general/sendFormModal';
 //Обработка всех страничных форм, первый параметр - форма, второй - проверка чекбокса
@@ -30,3 +32,5 @@ popUp(document.querySelector('.open-popup'), document.getElementById('free_visit
 popUp(document.querySelector('.call .callback-btn'), document.getElementById('callback_form'));
 //mainSlider
 mainSlider();
+//УСЛУГИ НАШИХ КЛУБОВ #services
+servicesSlider();
