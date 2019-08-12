@@ -12,7 +12,8 @@ const gallerySlider = () => {
                 <div class="slider-arrow next"><span><i class="fa fa-angle-right"></i></span></div>
                 <div class="slider-arrow prev"><span><i class="fa fa-angle-left"></i></span></div>
             `;
-
+    slider.style.height = slide[0].offsetHeight + `px`;
+    //console.log(slide[0].offsetHeight);
     slide.forEach((elem, index) => {
 
         if(index === 0){
@@ -20,7 +21,7 @@ const gallerySlider = () => {
         } else {
             elem.style.cssText = 'display:none;opacity:0;';
         }
-        //slider.style.height = elem.offsetHeight + `px`;
+
         elem.style.transition = `opacity .5s`;
     });
 
@@ -47,8 +48,9 @@ const gallerySlider = () => {
     const prevSlide = (elem, index, strClass=false) => {
         if(strClass === false){
             elem[index].style.opacity = `0`;
+            elem[index].style.display = `none`;
             timeOutFirst = setTimeout(() => {
-                elem[index].style.display = `none`;
+
                 clearTimeout(timeOutFirst);
             }, 300);
         } else {
@@ -82,7 +84,7 @@ const gallerySlider = () => {
         nextSlide(dots, currentSlide, 'slick-active');
     };
 
-    const startSlide = (time=7000) => {
+    const startSlide = (time=3000) => {
         interval = setInterval(autoPlaySlide, time);
     };
 
@@ -122,7 +124,7 @@ const gallerySlider = () => {
         nextSlide(slide, currentSlide );
         nextSlide(dots, currentSlide, 'slick-active');
     });
-/*
+//*
     slider.addEventListener('mouseover', (event) => {
         if(event.target.closest('.slider-dots li, .slider-arrow')){
             stopSlide();
@@ -135,7 +137,7 @@ const gallerySlider = () => {
             startSlide();
         }
     });
-*/
-    //startSlide(2000);
+//*/
+    startSlide();
 };
 export default gallerySlider;
