@@ -1,7 +1,7 @@
 
 //Обработка всех popup, +первый элемент кнпока, второй сама форма
 import popUp from './popUp';
-import {clearInput, validatePhone, checkStringRu} from './sendFormModules/moduleForms';
+import {clearInput, validatePhone, checkStringRu, checkPhone} from './sendFormModules/moduleForms';
 //popUp(false, document.getElementById('#thanks'));
 const sendFormPage = (form, check=false) => {
     const   modalHead = document.querySelector('#thanks h4'),
@@ -26,6 +26,12 @@ const sendFormPage = (form, check=false) => {
             const target = event.target;
             if(target.matches('input[name=name]')){
                 if(checkStringRu(event.key) !== true){
+                    event.preventDefault();
+                    return false;
+                }
+            }
+            if(target.matches('input[name=phone]')){
+                if(checkPhone(event.key) !== true){
                     event.preventDefault();
                     return false;
                 }

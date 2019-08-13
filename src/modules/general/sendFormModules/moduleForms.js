@@ -27,3 +27,11 @@ export const validateMail = (str) => {
     const re = /^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/i;
     return re.test(str);
 };
+
+export const checkPhone = (phone) => {
+    let regexp = /[0-9/B]/i;
+    if(regexp.test(phone))
+        return true;
+    else
+        return false;
+};

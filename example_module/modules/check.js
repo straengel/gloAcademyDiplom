@@ -16,7 +16,7 @@ export const checkStringRu = (str) => {
     }
 };
 export const checkPhone = (phone) => {
-    let regexp = /[\+0-9/B]/i;
+    let regexp = /[0-9/B]/i;
     if(regexp.test(phone))
         return true;
     else
