@@ -1,7 +1,8 @@
 //очищение текстовых инпутов
 export const clearInput = (inputs) => {
     inputs.forEach((val, key) => {
-        val.value = '';
+        if(val.type === 'text' || val.type === 'tel')
+            val.value = '';
     });
 };
 //запрет на ввод не русских букв

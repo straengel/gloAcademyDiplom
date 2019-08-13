@@ -39,6 +39,11 @@ window.addEventListener('DOMContentLoaded', function(){
     gallerySlider();
 //проверка форм первый параметр сама форма, второй проверка чекбокса
     sendFormPage(document.getElementById('banner-form'), document.getElementById('check1'));
-
+//Выбрать клуб
+    //сделаем значение по умолчанию
+    document.getElementById('footer_leto_mozaika').checked = true;
+    sendFormPage(document.getElementById('footer_form'));
+//КЛУБНЫЕ КАРТЫ
+    sendFormPage(document.getElementById('card_order'), document.getElementById('card_check'));
 });
 
