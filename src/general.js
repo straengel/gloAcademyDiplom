@@ -19,6 +19,8 @@ import gallerySlider from './modules/general/gallerySlider';
 //import sendFormModal from './modules/general/sendFormModal';
 //Обработка всех страничных форм, первый параметр - форма, второй - проверка чекбокса
 import sendFormPage from './modules/general/sendFormPage';
+//Модальные окна
+import sendFormModal from './modules/general/sendFormModal';
 //пример подключение js файлов
 //import countTimer from "./modules/countTimer";
 window.addEventListener('DOMContentLoaded', function(){
@@ -44,5 +46,7 @@ window.addEventListener('DOMContentLoaded', function(){
     sendFormPage(document.getElementById('footer_form'));
 //КЛУБНЫЕ КАРТЫ
     sendFormPage(document.getElementById('card_order'), document.getElementById('card_check'));
+//Модальное окно
+    sendFormModal(document.getElementById('form1'), document.getElementById('check'));
 });
 

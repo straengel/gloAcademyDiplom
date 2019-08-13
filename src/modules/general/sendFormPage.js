@@ -1,8 +1,7 @@
 
 //Обработка всех popup, +первый элемент кнпока, второй сама форма
 import popUp from './popUp';
-import {clearInput, validatePhone} from './sendFormModules/moduleForms';
-import {checkPhone, checkStringRu} from "../../../example_module/modules/check";
+import {clearInput, validatePhone, checkStringRu} from './sendFormModules/moduleForms';
 //popUp(false, document.getElementById('#thanks'));
 const sendFormPage = (form, check=false) => {
     const   modalHead = document.querySelector('#thanks h4'),

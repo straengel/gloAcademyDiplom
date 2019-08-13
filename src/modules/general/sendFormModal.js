@@ -1,15 +1,17 @@
 
 //Обработка всех popup, +первый элемент кнпока, второй сама форма
-import popUp from './popUp';
-import {clearInput, validatePhone} from './sendFormModules/moduleForms';
+import {clearInput, validatePhone, checkStringRu} from './sendFormModules/moduleForms';
 //popUp(false, document.getElementById('#thanks'));
 const sendFormModal = (form, check=false) => {
     const   modalHead = document.querySelector('#thanks h4'),
         modalText = document.querySelector('#thanks p'),
-        errorMessage = 'Произошла ошибка',
+        errorMessage = 'Произошла ошибка!',
+        loadMessage = 'Идет отправка!',
         successMessage = 'Письмо отправлено!';
 
     const inputs = form.querySelectorAll('input');
+
+    const statusMessage = document.createElement('div');
 
     const postData = (body) => {
         return fetch('./server.php', {
@@ -33,9 +35,11 @@ const sendFormModal = (form, check=false) => {
         });
     };
     banChars();
+    statusMessage.style.cssText = 'font-size: 1rem; color: #ffd11a';
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
+        form.appendChild(statusMessage);
         const formData = new FormData(form);
         let body = {};
         //проверка чекбокса
@@ -60,33 +64,19 @@ const sendFormModal = (form, check=false) => {
             }
         }
         //console.log(body);
-
+        statusMessage.textContent = loadMessage;
         ///*
         postData(body)
             .then((response)=>{
                 if(response.status !== 200){
-                    modalHead.textContent = `Произошла ошибка`;
-                    modalText.innerHTML = `
-                        Ваша заявка не отправлена.
-                    `;
-                    popUp(false, document.getElementById('thanks'));
-                    return false;
+                    throw new Error('status network not 200');
                 }
-                modalHead.textContent = `Спасибо!`;
-                modalText.innerHTML = `
-                        Ваша заявка отправлена. <br> Мы свяжемся с вами в ближайшее время.
-                    `;
-
-                popUp(false, document.getElementById('thanks'));
+                statusMessage.textContent = successMessage;
                 clearInput(inputs);
             })
             .catch((error) => {
-                modalHead.textContent = `Произошла ошибка`;
-                modalText.innerHTML = `
-                        Ваша заявка не отправлена.
-                    `;
-                popUp(false, document.getElementById('thanks'));
-                clearInput(inputs);
+                statusMessage.textContent = errorMessage;
+                console.error();
             });
     });
 
