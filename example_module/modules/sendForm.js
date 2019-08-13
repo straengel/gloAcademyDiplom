@@ -1,7 +1,7 @@
 //send-ajax-form
 import {checkPhone, checkStringRu} from "./check";
 const sendForm = (element) => {
-    const   errorMessage = 'Что-то пошло не так...',
+    const   formSucces = 'Что-то пошло не так...',
         loadMessage = 'Загрузка',
         successMessage = 'Спасибо! Мы скоро с Вами свяжемся!';
 

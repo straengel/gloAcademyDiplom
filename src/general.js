@@ -18,7 +18,7 @@ import gallerySlider from './modules/general/gallerySlider';
 //Обработка всех модальных форм, первый параметр - форма, второй - проверка чекбокса
 //import sendFormModal from './modules/general/sendFormModal';
 //Обработка всех страничных форм, первый параметр - форма, второй - проверка чекбокса
-//import sendFormPage from './modules/general/sendFormPage';
+import sendFormPage from './modules/general/sendFormPage';
 //пример подключение js файлов
 //import countTimer from "./modules/countTimer";
 window.addEventListener('DOMContentLoaded', function(){
@@ -37,5 +37,8 @@ window.addEventListener('DOMContentLoaded', function(){
     servicesSlider();
 //ФОТОГАЛЕРЕЯ
     gallerySlider();
+//проверка форм первый параметр сама форма, второй проверка чекбокса
+    sendFormPage(document.getElementById('banner-form'), document.getElementById('check1'));
+
 });
 
