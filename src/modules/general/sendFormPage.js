@@ -70,6 +70,8 @@ const sendFormPage = (form, check=false) => {
                     modalText.innerHTML = `
                         Ваша заявка не отправлена.
                     `;
+                    popUp(false, document.getElementById('thanks'));
+                    return false;
                 }
                 modalHead.textContent = `Спасибо!`;
                 modalText.innerHTML = `

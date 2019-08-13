@@ -25,8 +25,7 @@ window.addEventListener('DOMContentLoaded', function(){
     'use strict';
 //менюшка
     clubSelect();
-//модульное окно подарок открытие
-    popUp(document.querySelector('.fixed-gift'), document.getElementById('gift'));
+
 //Страница модулей открытие
     popUp(document.querySelector('.open-popup'), document.getElementById('free_visit_form'));
 //Модальное окно #2 открытие

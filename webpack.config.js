@@ -3,8 +3,8 @@ module.exports = {
     entry: {
         general: './src/general.js',
         main: './src/index.js',
-        schelkovo: './src/schelkovo.js',
-        mozaika: './src/mozaika.js',
+        //schelkovo: './src/schelkovo.js',
+        //mozaika: './src/mozaika.js',
     },
     output: {
         path: path.resolve(__dirname, './dist'),
