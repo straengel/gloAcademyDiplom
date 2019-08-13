@@ -56,8 +56,10 @@ const sendFormPage = (form, check=false) => {
         //Валидация телефона
         if (body.phone){
             if(!validatePhone(body.phone)){
+                alert('Введите правильно телефон');
                 return false;
             }
+            console.log('Телефон введен правильно');
         }
         //console.log(body);
 
