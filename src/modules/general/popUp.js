@@ -1,4 +1,4 @@
-const popUp = (popUpBtn = false, popUp) => {
+const popUp = (popUpBtn = false, popUp, clickClose=false) => {
     if(popUpBtn === false){
         popUp.style.display = 'block';
     } else {
@@ -11,6 +11,9 @@ const popUp = (popUpBtn = false, popUp) => {
         let target = event.target;
         if(target.matches('.overlay') || target.matches('.close_icon') || target.matches('.close-btn')){
             popUp.style.display = 'none';
+            if(clickClose){
+                clickClose();
+            }
         }
     });
 

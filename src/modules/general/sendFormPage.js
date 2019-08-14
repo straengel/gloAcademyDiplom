@@ -47,12 +47,12 @@ const sendFormPage = (form, check=false) => {
         //проверка чекбокса
         if(check){
             if(!check.checked){
-                console.log('Проверка не пройдена');
+                alert('Подтвердите согласие на обработку персональных данных в чекБОКСЕ!');
             } else {
-                console.log('Проверка пройдена');
+                //console.log('Проверка пройдена');
             }
         } else {
-            console.log('Нет чекбокса');
+            //console.log('Нет чекбокса');
         }
 
 
